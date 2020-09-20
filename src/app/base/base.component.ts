@@ -8,7 +8,7 @@ import { TAG, PORTFOLIO } from '../projects/project.constant';
 })
 
 export class BaseComponent implements OnInit {
-    title = 'petalsArtDecor';
+    title = 'decor-villa';
     bgPos = 0;
     bgPosition = '100px';
 
