@@ -1,0 +1,111 @@
+<section id="section-welcome" class="section-welcome bg-loop bg-fit-height full-height"
+    [ngStyle]="{'background-position': bgPosition}">
+    <div class="text">
+        <p>OUR EXPERTISE IN</p>
+        <h1 class="text-color">INTERIOR DESIGN</h1>
+        <a routerLink="/projects">VIEW OUR WORK <i class="fa fa-angle-right fa-lg text-color"></i></a>
+    </div>
+</section>
+
+<section class="what-we-do-section" style="padding: 20px 0 10px 0">
+    <div class="quoatation-container bg-color">
+        <p style="margin: 0;">Affordable, Reliable & Competent designs that reflects your personality.</p> <a
+            routerLink="/contact-us">GET QUOTATION</a>
+    </div>
+    <div *ngFor="let item of whatWeDo" class="what-we-do"
+        [ngStyle]="{'flex-direction': item.flexDirection, 'background-color': item.bgColor}">
+        <div class="left-what-we-do in-left">
+            <h2 style="margin-top: 16px;" class="text-color">{{item.heading}}</h2>
+            <div class="separator" style="background-size: cover;">
+                <span>
+                    <i class="fa fa-circle"></i>
+                </span>
+            </div>
+            <p>
+                {{item.content1}}
+            </p>
+            <a class="text-color" routerLink="/projects" [queryParams]="{filter: item.filter}">SEE PROJECTS <i
+                    class="fa fa-angle-right fa-lg"></i></a>
+        </div>
+        <div class="right-what-we-do">
+            <img src="../assets/portfolio/{{item.image}}">
+        </div>
+    </div>
+</section>
+
+<section class="our-process-section">
+    <h1 class="text-color">OUR PROCESS</h1>
+    <div class="separator" style="background-size: cover;">
+        <span>
+            <i class="fa fa-circle"></i>
+        </span>
+    </div>
+    <div class="our-process">
+        <div *ngFor="let item of ourProcess" [ngClass]="{'selected': item.key == selectedProcess.key}"
+            class="circular-process" (mouseenter)="selectProcess(item)">
+            {{item.value}}
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <div class="content">
+        <p>
+            {{selectedProcess.content}}
+        </p>
+    </div>
+</section>
+
+<section class="our-process-section-mobile">
+    <h1 class="text-color">OUR PROCESS</h1>
+    <div class="separator" style="background-size: cover;">
+        <span>
+            <i class="fa fa-circle"></i>
+        </span>
+    </div>
+    <div class="our-process">
+        <div *ngFor="let item of ourProcess" class="our-process-item">
+            <div class="circular-process">
+                {{item.value}}
+            </div>
+            <div class="content">
+                <p>
+                    {{item.content}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="portfolio">
+    <h1 class="text-color">OUR PORTFOLIO</h1>
+    <div class="separator" style="background-size: cover;">
+        <span>
+            <i class="fa fa-circle"></i>
+        </span>
+    </div>
+    <ul class="pf-container">
+        <li *ngFor="let img of portfolioImages" class="pf-repeater" routerLink="/projects">
+            <img src="../{{img?.src}}">
+            <div class="hover-content">
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="experience-container">
+    <div class="experience-item" *ngFor="let item of experienceWithUs"
+        [ngClass]="{'experience-item-centre': item.centre}">
+        <div class="icon">
+            <i class="fa {{item.faIcon}} fa-lg"></i>
+        </div>
+        <div>
+            <h2 class="text-color exp-head">{{item.heading}}</h2>
+            <p align="justify">{{item.description}}</p>
+        </div>
+    </div>
+</section>
+
+<router-outlet></router-outlet>

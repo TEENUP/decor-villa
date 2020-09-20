@@ -1,0 +1,58 @@
+.about-us{
+    .about-us-container {
+        .about-head {
+            font-size: 30px;
+            color: #df9f91;
+        }
+        .about-bg {
+            background-size: auto 100% !important;
+            background-attachment: scroll !important;
+            background: url(../../assets/office.jpg) fixed center;
+            width: 50%;
+        }
+        .about-text {
+            padding: 50px 300px;
+            letter-spacing: 1px;
+            font-size: 18px;
+            background: #18191b;
+            line-height: 30px;
+        }
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: center;
+
+        .team-pics {
+            height: 300px;
+            width: 180px;
+            background: lightgrey;
+            border: solid;
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-us{
+        .about-us-container {
+            .about-text {
+                padding: 50px 110px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about-us{
+        .about-us-container {
+            .about-head {
+                font-size: 24px;
+                letter-spacing: 0;
+            }
+            .about-text {
+                padding: 50px 25px;
+            }
+        }
+    }
+}

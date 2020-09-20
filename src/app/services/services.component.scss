@@ -1,0 +1,10 @@
+.service-container {
+    position: relative;
+    top: 126px;
+}
+
+@media screen and (max-width: 550px) {
+    .service-container {
+        padding: 0 0 150px 0;
+    }
+}
